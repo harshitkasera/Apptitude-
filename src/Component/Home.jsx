@@ -17,7 +17,7 @@ const Home = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault();
     try{
-      const res = await axios.post('http://localhost:1100/api/user/saveUser',form)
+      const res = await axios.post('https://apptitude-backend-a32l.onrender.com/api/user/saveUser',form)
       console.log(res);
       alert('user Created successfuly ')
     }
@@ -36,7 +36,7 @@ const Home = () => {
 
   const loginuser = async(e)=>{
     e.preventDefault();
-    const response = await axios.post('http://localhost:1100/api/user/loginuser',{
+    const response = await axios.post('https://apptitude-backend-a32l.onrender.com/api/user/loginuser',{
       email, password
     })
     console.log(response)

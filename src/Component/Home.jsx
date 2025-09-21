@@ -2,8 +2,7 @@ import React from 'react'
 import "./Style/Home.css"
 import axios from 'axios'
 import { useState } from 'react'
-import { useAuth } from './Auth'
-import {useNavigate} from 'react-router-dom'
+
 const Home = () => {
   //signup
   const[form, setform]=useState({
@@ -29,67 +28,11 @@ const Home = () => {
 
   //login
    
-  const [email, setemail]= useState('')
-  const [password, setpassword]=useState('')
- const {login} = useAuth();
- const navigate = useNavigate()
-
-  const loginuser = async(e)=>{
-    e.preventDefault();
-    const response = await axios.post('https://apptitude-backend-a32l.onrender.com/api/user/loginuser',{
-      email, password
-    })
-    console.log(response)
-    console.log(response.status)
-    console.log(email)
-    console.log(password)
-
-    const token = response.data.token
-    localStorage.setItem('token', token)
-    login(token)
-    console.log(token)
-
-    if(response.status==200){
-      navigate('/sidebar')
-    }
-  }
 
   return (
     <div>
       <div className='outer'>
-        <nav className='header'>
-          <img className='logo' src='./Images/logo.png' height="65vh" />
-
-
-          <button type="button" className="btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Login
-          </button>
-
-
-          <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog">
-              <form onSubmit={loginuser}>
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title fs-5" id="exampleModalLabel">Login</h1>
-                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div className="modal-body">
-                  <input className='inp' placeholder='Enter the Email' type='email' value={email} onChange={(e)=> setemail(e.target.value)}></input><br></br>
-                  <input className='inp' placeholder='Enter the Password' type='password' value={password} onChange={(e)=> setpassword(e.target.value)}></input><br></br>
-                 <span>
-  Don’t have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Signup</a>
-</span>
-
-                </div>
-                <div className="modal-footer">
-                  <button type='submit' className="btn">Login</button>
-                </div>
-              </div>
-              </form>
-            </div>
-          </div>
-        </nav>
+       
 
         <div className='content'>
           <h1>Why Choose Us?</h1>

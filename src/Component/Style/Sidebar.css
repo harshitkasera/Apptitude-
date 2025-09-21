@@ -56,6 +56,13 @@
 .logout-btn:hover {
   background-color: #e84118;
 }
+span{
+  display: flex;
+}
+.st{
+  gap: 5px;
+  
+}
 
 /* Responsive for small screens */
 @media (max-width: 768px) {
@@ -70,7 +77,8 @@
   }
 
   .side-link {
-    font-size: 0;
+  
+            font-size: 13px;
     padding: 10px;
     text-align: center;
     position: relative;
@@ -90,6 +98,12 @@
 
   .side-link:hover::before {
     opacity: 1; /* Show tooltip text on hover */
+  }
+  .name{
+    font-size: 0;
+  }
+  .icon{
+    font-size: 15px;
   }
 
   .logout-btn {

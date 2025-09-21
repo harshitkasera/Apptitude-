@@ -1,0 +1,11 @@
+.prof-box{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+}
+.pp{
+    border: 1px solid;
+    width: 50px;
+
+}

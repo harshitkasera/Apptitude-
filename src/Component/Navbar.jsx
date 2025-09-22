@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <div>
        <nav className='header'>
-        <a href="/home">
-          <img className='logo' src='./Images/logo.png' height="65vh" /></a>
+        <Link to="/home">
+          <img className='logo' src='./Images/logo.png' height="65vh" /></Link>
 <Link to="/login">
          
           <button type="button" className="btn-primary" >

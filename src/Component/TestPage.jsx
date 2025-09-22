@@ -1,5 +1,5 @@
 import React from 'react'
-import './Style/test.css'
+import './Style/Test.css'
 const TestPage = () => {
   return (
     <div className='test-box'>

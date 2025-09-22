@@ -1,0 +1,33 @@
+.btn-primary{
+    background-color: rgba(229, 223, 234, 0.91);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+.btn-primary:hover{
+    background-color: tomato;
+    color: white;
+    transition: 0.3s;
+}
+@media (max-width: 768px) {
+    .btn-primary{
+        font-size: 12px;
+        margin-left: -85px;
+    }
+    .header{
+        width: 120%;
+        margin-left: -30px;
+        margin-top: -32px;
+    }
+    .logo{
+        margin-left: 20px;
+        width: 140px;
+        /* height: 500px; */
+
+    }
+    .outer{
+        padding: 0px;
+        margin: 0 auto;
+       
+    }
+}

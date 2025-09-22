@@ -115,6 +115,11 @@ body {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
+  .outer{
+    width: 120%;
+    margin-left: -30px;
+    margin-top: -15px;
+  }
   .content h1 {
     font-size: 2rem;
   }

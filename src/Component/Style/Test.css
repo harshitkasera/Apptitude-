@@ -5,6 +5,27 @@
     align-items: center;
 }
 .tt{
-    border: 1px solid;
-    width: 50px;
+    border: 1px none;
+    /* padding: 70px; */
+    height: 450px;
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px black;
+}
+.test-h4{
+    color: orange;
+}
+.test-heading{
+    text-align: center;
+}
+.test-para{
+    margin-left: 170px;
+    font-size: 30px;
+    /* margin-top: 20px; */
+}
+a{
+    text-decoration: none;
+}
+.list{
+    margin-top: 40px;
 }

@@ -1,0 +1,54 @@
+.exambox{
+display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+}
+.ee{
+    padding: 25px;
+    /* border: 1px solid ; */
+    box-shadow: 0px 4px 8px;
+    height: 320px;
+    width: 350px;
+    border-radius: 12px;
+
+}
+.e-btn{
+    background-color: rgba(5, 130, 5, 0.836);
+    color: white;
+    padding: 5px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+.e-btn:hover{
+    transition: 0.4s;
+    background-color: rgb(3, 122, 3);
+    border-radius: 20px;
+}
+
+.eh3{
+    text-align: center;
+    margin-top: 20px
+}
+.eh{
+    font-size: 25px;
+    text-align: center;
+    color: rgba(37, 106, 106, 0.549);
+}
+.option{
+    
+    
+    margin-left: 20px;
+     padding: 10px 35px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+    
+}
+i{
+    text-align: center;
+}

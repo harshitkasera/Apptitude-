@@ -11,6 +11,7 @@ import Result from './Component/Result'
 import Login from './Component/Login'
 import { Navigate } from 'react-router-dom'
 import TestPage from './Component/TestPage'
+import Exam from './Component/Exam'
 const App = () => {
   const {isloggedIn, loading}  = useAuth();
   if(loading){
@@ -39,6 +40,7 @@ const App = () => {
   <Route path='/testpage' element={<TestPage/>}></Route>
   <Route path='/history' element={<History/>}></Route>
   <Route path='/result' element={<Result/>}></Route>
+  <Route path='/exam' element={<Exam/>}></Route>
       </Routes> 
 
     

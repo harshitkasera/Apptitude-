@@ -1,7 +1,14 @@
-import './Style/Test.css'
 
+
+
+import React from 'react'
+import './Style/Test.css'
 import { Link } from 'react-router-dom'
 
+const TestPage = () => {
+  return (
+    <div>
+      
 <div className='list'>
   <a href='https://www.indiabix.com/computer-science/computer-fundamentals/'>
     <p className='test-para'>Second Year</p>
@@ -18,3 +25,9 @@ import { Link } from 'react-router-dom'
   </a>
   <br />
 </div>
+
+    </div>
+  )
+}
+
+export default TestPage

@@ -16,8 +16,11 @@ body.dark {
 
 /* 🌗 Toggle Button Style */
 .theme-toggle {
-  position: fixed;
-  top: 20px;
+  position: absolute;
+  margin-top: 25px;
+  margin-right: 10%;
+  margin-left: 50%;
+  top: 20;
   right: 20px;
   z-index: 1000;
 }
@@ -62,3 +65,4 @@ body.dark .navbar {
   color: #f1f1f1;
   margin: 0;
 }
+

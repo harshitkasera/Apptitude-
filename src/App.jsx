@@ -107,7 +107,7 @@ const App = () => {
       {/* 🌙 Dark / Light Toggle Button */}
       <div className="theme-toggle">
         <button onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+          {darkMode ? "☀️" : "🌙"}
         </button>
       </div>
 

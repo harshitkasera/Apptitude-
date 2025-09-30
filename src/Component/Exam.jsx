@@ -311,7 +311,7 @@ const Exam = () => {
   // Fetch questions
   useEffect(() => {
     const fetchQuestions = async () => {
-      const res = await axios.get("http://localhost:1100/api/question");
+      const res = await axios.get("https://apptitude-backend-a32l.onrender.com/api/question");
       setQuestions(res.data);
     };
     fetchQuestions();

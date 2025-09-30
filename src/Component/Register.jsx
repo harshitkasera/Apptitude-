@@ -23,7 +23,7 @@ export default class Signup extends Component {
                 Repeat Password<br></br>
                 <input className='logo-inpt' type="password" placeholder="enter the repeat password"></input>
                 <hr></hr><br></br>
-                <div className="checkbox"><input class="check" type="checkbox"></input>I agree to the Term & Primacy</div>
+                <div className="checkbox"><input className="check" type="checkbox"></input>I agree to the Term & Primacy</div>
                 <button className="button">Sign Up</button>
                 <button className="button2">Sign in--</button>
         </div>

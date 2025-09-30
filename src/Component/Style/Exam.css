@@ -1,3 +1,4 @@
+/* 
 .exambox{
 display: flex;
     justify-content: center;
@@ -6,7 +7,7 @@ display: flex;
 }
 .ee{
     padding: 25px;
-    /* border: 1px solid ; */
+   
     box-shadow: 0px 4px 8px;
     height: 320px;
     width: 350px;
@@ -17,7 +18,16 @@ display: flex;
     background-color: rgba(5, 130, 5, 0.836);
     color: white;
     padding: 5px 20px;
-    width: 100%;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+.e-btnn{
+    background-color: rgba(192, 41, 8, 0.799);
+    color: white;
+    padding: 5px 20px;
+    width: 50%;
     border: none;
     border-radius: 5px;
     margin-top: 25px;
@@ -39,11 +49,9 @@ display: flex;
 }
 .option{
     
-    
+    display: flex;
     margin-left: 20px;
-     padding: 10px 35px;
-  margin-bottom: 10px;
-  border-radius: 8px;
+     padding: 2px 105px;
   cursor: pointer;
   transition: 0.3s;
   border: 2px solid transparent;
@@ -51,4 +59,115 @@ display: flex;
 }
 i{
     text-align: center;
+}
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* === Base Light Mode === */
+.exam-container {
+  width: 60%;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.exam-container h1, .exam-container h2 {
+  text-align: center;
+}
+
+.question-card {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.option-label {
+  display: block;
+  margin: 5px 0;
+}
+
+.submit-btn, .theme-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn {
+  background: #007bff;
+  color: #fff;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+.theme-btn {
+  background: #444;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.theme-btn:hover {
+  background: #222;
+}
+
+/* === Dark Mode === */
+.exam-container.dark {
+  background: #1e1e2f;
+  color: #f0f0f0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.exam-container.dark .question-card {
+  background: #2a2a3c;
+  border-color: #444;
+}
+
+.exam-container.dark .submit-btn {
+  background: #4a90e2;
+  color: #fff;
+}
+
+.exam-container.dark .submit-btn:hover {
+  background: #357abd;
+}
+
+.exam-container.dark .theme-btn {
+  background: #888;
+  color: #222;
+}
+
+.exam-container.dark .theme-btn:hover {
+  background: #aaa;
 }

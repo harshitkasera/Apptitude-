@@ -11,7 +11,7 @@ const Navbar = () => {
 <Link to="/login">
          
           <button type="button" className="btn-primary" >
-            Login
+            Login<i className="fa fa-sign-in" aria-hidden="true"></i>
           </button>
 </Link>
 

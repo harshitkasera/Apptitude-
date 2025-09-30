@@ -1,10 +1,31 @@
 .res-box{
-display: flex;
+    display: flex;
     justify-content: center;
     min-height: 100vh;
     align-items: center;
 }
 .rr{
-     border: 1px solid;
-    width: 80px;
+     border: 1px none;
+     box-shadow: 0 1px 4px ;
+     padding: 15px;
+    height: 270px;
+    width: 300px;
+     text-align: center;
+    
+}
+.rh1{
+    font-size: 25px;
+}
+.r-btn{
+    margin-top: 45px;
+    width: 100%;
+    border: none;
+    padding: 5px 20px;
+    background-color: rgba(11, 76, 160, 0.73);
+    color: white;
+    border-radius: 8px;
+}
+.r-btn:hover{
+    transition: 0.4s;
+    border-radius: 50px;
 }

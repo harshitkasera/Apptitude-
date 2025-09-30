@@ -6,7 +6,7 @@
   height: 100%;
   width: 240px;
   background-color: #1e1e2f;
-  color: white;
+  color: rgb(67, 14, 14);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -21,13 +21,13 @@
   font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
-  color: #f5f5f5;
+  color: #0d99b1ed;
 }
 
 /* Links */
 .side-link {
   text-decoration: none;
-  color: #ccc;
+  color: #9a9898;
   font-size: 16px;
   padding: 10px 12px;
   border-radius: 8px;

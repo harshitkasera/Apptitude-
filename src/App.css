@@ -18,7 +18,7 @@ body.dark {
 .theme-toggle {
   position: absolute;
   margin-top: 25px;
-  margin-right: 10%;
+  margin-right: 20%;
   margin-left: 50%;
   top: 20;
   right: 20px;
@@ -27,17 +27,18 @@ body.dark {
 
 .theme-toggle button {
   padding: 8px 16px;
+  margin-top: -85px;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  background: #007bff;
+  background: #d900ff5f;
   color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 body.dark .theme-toggle button {
-  background: #ffa500;
+  background: #3a2704a2;
   color: #000;
 }
 
@@ -65,4 +66,53 @@ body.dark .navbar {
   color: #f1f1f1;
   margin: 0;
 }
+body.dark .feature{
+  color: black;
+}
+body.dark .t{
+    border: 1px none;
+    /* padding: 70px; */
+    height: 450px;
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgb(211, 208, 208);
+    background-image: url(".././public/Images/test-bg-black.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 1s;
+}
+body.dark .tt{
+  display: none;
+  transition: 1s;
+}
+body.light .test-para:hover{
+  color: black;
+  transition: 0.3s;
+}
+ /* dashboard */
+body.dark .grid > div {
+  color: rgb(0, 0, 0);
+}
+body.dark table {
+  color: black;
+}
 
+/* profile */
+body.dark .pp{
+  background-color: rgba(29, 29, 29, 0.058);
+}
+body.dark input{
+  color: white;
+}
+body.dark .pro-p{
+  color: rgb(220, 219, 219);
+}
+body.dark .bg-white{
+  background-color: black;
+}
+@media(max-width: 768){
+  .theme-toggle button{
+        margin-top: 50px;
+  }
+}

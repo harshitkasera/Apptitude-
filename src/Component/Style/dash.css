@@ -1,10 +1,87 @@
-.dash-box{
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    align-items: center;
+
+
+/* 📊 Stats Cards */
+.grid {
+  margin-left: 280px;
+  padding: 0 30px;
 }
-.dd{
-    border: 1px solid;
-    width: 80px;
+
+.grid > div {
+  background: #f5f2f2;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.grid > div:hover {
+  transform: translateY(-3px);
+}
+
+/* 📈 Progress & 📊 Topic Chart */
+.bg-white.shadow.rounded-xl {
+  margin-left: 280px;
+  margin-top: 20px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.bg-white.shadow.rounded-xl h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+/* 📜 Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #e0ebff;
+  font-weight: 600;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px;
+  font-size: 15px;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+tr:hover {
+  background: #f0f4ff;
+}
+
+/* 📱 Responsive */
+@media screen and (max-width: 768px) {
+  .prof-box,
+  .grid,
+  .bg-white.shadow.rounded-xl {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .pp {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .prof-dp {
+    width: 100px;
+    height: 100px;
+  }
+
+  .pp h2 input {
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -10,8 +10,9 @@
     height: 450px;
     width: 500px;
     border-radius: 12px;
-    box-shadow: 0 2px 5px black;
+    box-shadow: 0 2px 5px rgb(211, 208, 208);
 }
+
 .test-h4{
     color: orange;
 }
@@ -20,12 +21,41 @@
 }
 .test-para{
     margin-left: 170px;
-    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+    font-size: 40px;
+    transition: 0.2s;
     /* margin-top: 20px; */
+}
+.test-para:hover{
+    color: white;
 }
 a{
     text-decoration: none;
 }
 .list{
     margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .test-para{
+        margin-left: 0px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .list{
+        width: 70%;
+        border-radius: 12px;
+        box-shadow: 0px 1px 8px gray;
+        text-align: center;
+        margin-left: 90px;
+        margin-top: -200px;
+    }
+     .tt{
+      display: none;
+    }
+    .t{
+        display: none;
+    }
+    
 }

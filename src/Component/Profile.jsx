@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Style/profile.css'
+import './Style/Profile.css'
 
 const Profile = () => {
   // ✅ State for editable name & photo

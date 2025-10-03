@@ -61,11 +61,11 @@ const Dashboard = () => {
           <p className="text-3xl font-bold text-purple-600">{avgScore}%</p>
         </div>
       </div>
-
+{/* sifdhosh */}
       {/* 📈 Progress Graph */}
       <div className="bg-white shadow rounded-xl p-6 my-6">
         <h3 className="text-xl font-semibold mb-4">📈 Progress Over Time</h3>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={300}> 
           <LineChart data={progressData}>
             <XAxis dataKey="date" />
             <YAxis domain={[0, 100]} />

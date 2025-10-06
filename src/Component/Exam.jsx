@@ -371,7 +371,7 @@ const Exam = () => {
 
       {questions.map((q, qIndex) => (
         <div className="question-card" key={qIndex}>
-          <h2>Q{qIndex + 1}. {q.question}</h2>
+          <h2 className="ques">Q{qIndex + 1}. {q.question}</h2>
           {q.options.map((opt, optIndex) => (
             <label key={optIndex} className="option-label">
               <input

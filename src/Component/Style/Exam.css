@@ -148,7 +148,9 @@ i{
   color: #f0f0f0;
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
-
+.exam-container.dark h2{
+  color: white;
+}
 .exam-container.dark .question-card {
   background: #2a2a3c;
   border-color: #444;

@@ -79,3 +79,9 @@
   font-size: 15px;
   color: #555;
 }
+
+@media (max-width: 768px){
+  .prof-box{
+    margin-left: 63px;
+  }
+}

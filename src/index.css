@@ -158,7 +158,11 @@ h1, h2 {
   background: linear-gradient(90deg, #28a745, #85e085);
   transition: width 0.6s ease;
 }
-
+.prof-img{
+  margin-left: 280px;
+  width: 81%;
+  height: 480px;
+}
 
 
 @media (max-width: 768px) {
@@ -182,5 +186,6 @@ h1, h2 {
         margin: 0 auto;
        
     }
+  
    
 }

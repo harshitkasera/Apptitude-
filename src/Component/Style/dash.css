@@ -60,12 +60,19 @@ tr:hover {
 
 /* 📱 Responsive */
 @media screen and (max-width: 768px) {
-  .prof-box,
+
   .grid,
   .bg-white.shadow.rounded-xl {
-    margin-left: 0;
+    margin-left: 10px;
     padding: 15px;
+    width: 100%;
+    background-color: grey;
   }
+    .prof-box{
+      display: flex;
+      align-items: center;
+      margin-left: 65px;
+    }
 
   .pp {
     flex-direction: column;
@@ -84,4 +91,5 @@ tr:hover {
   .grid {
     grid-template-columns: 1fr;
   }
+
 }

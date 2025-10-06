@@ -43,7 +43,10 @@ const Profile = () => {
               </div>
         </div>
       </div>
-
+    
+    <div>
+      <img className="prof-img" src="./Images/profile.webp"/>
+    </div>
     
     </div>
   );

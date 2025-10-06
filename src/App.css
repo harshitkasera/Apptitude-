@@ -111,6 +111,7 @@ body.dark .pro-p{
 body.dark .bg-white{
   background-color: black;
 }
+
 @media(max-width: 768){
   .theme-toggle button{
         margin-top: 50px;

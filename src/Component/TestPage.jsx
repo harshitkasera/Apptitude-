@@ -20,11 +20,11 @@ const TestPage = () => {
   <Link to='/exam'>
     <p className='test-para'>Third Year</p>
   </Link>
+ <hr />
 
-
-  {/* <a href='#'>
+  <a href='#'>
     <p className='test-para'>Final Year</p>
-  </a> */}
+  </a>
   <br />
 </div>
 

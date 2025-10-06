@@ -57,7 +57,7 @@ const Login = () => {
         </form>
       </div>
         <div className='second'>
-          <img src='./Images/bird.webp'/>
+          <img className='l-img' src='./Images/bird.webp'/>
         </div>
     </div>
 

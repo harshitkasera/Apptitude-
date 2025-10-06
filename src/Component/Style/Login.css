@@ -6,7 +6,6 @@
   min-height: 100vh;
   gap: 2rem;
   padding: 20px;
-  background: #f9f9f9;
 }
 
 /* Left form section */
@@ -17,7 +16,8 @@
   padding: 2rem;
   border-radius: 12px;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 2px 5px 5px rgba(0,0,0,0.1);
+  background: #f9f9f9;
 }
 
 .first h1 {

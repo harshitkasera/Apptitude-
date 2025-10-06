@@ -66,7 +66,7 @@ tr:hover {
     margin-left: 10px;
     padding: 15px;
     width: 100%;
-    background-color: grey;
+    /* background-color: grey; */
   }
     .prof-box{
       display: flex;

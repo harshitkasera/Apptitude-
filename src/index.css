@@ -163,8 +163,14 @@ h1, h2 {
   width: 81%;
   height: 480px;
 }
-
-
+.header{
+  width: 103%;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+.l-img{
+  margin-left: 32px;
+}
 @media (max-width: 768px) {
     .btn-primary{
         font-size: 12px;

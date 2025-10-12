@@ -109,7 +109,16 @@ i{
 
 .option-label {
   display: block;
-  margin: 5px 0;
+  margin-left: 250px ;
+  padding: 5px;
+}
+@media(max-width: 768px) {
+  .option-label{
+    margin-left: 155px;
+  }
+  .exam-container{
+    width: 100%;
+  }
 }
 
 .submit-btn, .theme-btn {

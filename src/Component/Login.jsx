@@ -21,7 +21,9 @@ const Login = () => {
     console.log(password)
 
     const token = response.data.token
-    localStorage.setItem('token', token)
+    // localStorage.setItem('token', token)
+    localStorage.setItem("userId", response.data.user._id);
+
 
     console.log(token)
     login(response.data.token);

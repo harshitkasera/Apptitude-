@@ -1,67 +1,3 @@
-// import React from 'react'
-// import Home from './Component/Home'
-// import { Route, Routes } from 'react-router-dom'
-// import Sidebar from './Component/Sidebar'
-// import { useAuth } from './Component/Auth'
-// import Navbar from './Component/Navbar'
-// import Profile from './Component/Profile'
-// import Dashboard from './Component/Dashboard'
-// import History from './Component/History'
-// import Result from './Component/Result'
-// import Login from './Component/Login'
-// import { Navigate } from 'react-router-dom'
-// import TestPage from './Component/TestPage'
-// import Exam from './Component/Exam'
-// const App = () => {
-//   const {isloggedIn, loading}  = useAuth();
-//   if(loading){
-//      return <div style={{textAlign:"center", marginTop:"50px"}}>Loading...</div>;
-//   }
-//   return (
-//     <div>
-//       {isloggedIn ? <Sidebar/>:<Navbar/>}
- 
-//       <Routes>
-
-
-//     <Route
-//     path="/home"
-//     element={isloggedIn ? <Navigate to="/profile" /> : <Home />}/>
-
-//   <Route
-//     path="/profile"
-//     element={isloggedIn ? <Profile /> : <Navigate to="/home" />}/>
-
- 
-//   <Route path="*" element={<Navigate to={isloggedIn ? "/profile" : "/home"} />} />
-//   <Route path='/login' element={<Login/>}></Route>
-//   <Route path='/profile' element={<Profile/>}></Route>
-//   <Route path='/dashboard' element={<Dashboard/>}></Route>
-//   <Route path='/testpage' element={<TestPage/>}></Route>
-//   <Route path='/history' element={<History/>}></Route>
-//   <Route path='/result' element={<Result/>}></Route>
-//   <Route path='/exam' element={<Exam/>}></Route>
-//       </Routes> 
-
-    
-//     </div>
-//   )
-// }
-
-// export default App
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 import Home from "./Component/Home";
 import { Route, Routes, Navigate } from "react-router-dom";
@@ -76,6 +12,7 @@ import Login from "./Component/Login";
 import TestPage from "./Component/TestPage";
 import Exam from "./Component/Exam";
 import "./App.css"; // 👈 CSS file jisme dark-light mode ka style hoga
+import AddQues from "./Component/Admin/AddQues";
 
 const App = () => {
   const { isloggedIn, loading } = useAuth();
@@ -125,6 +62,7 @@ const App = () => {
         <Route path="/result" element={<Result />} />
         <Route path="/exam" element={<Exam />} />
         <Route path="*" element={<Navigate to={isloggedIn ? "/profile" : "/home"} />} />
+        <Route path="/addQues" element={<AddQues/>}/>
       </Routes>
     </div>
   );

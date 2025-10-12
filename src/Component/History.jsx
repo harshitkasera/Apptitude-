@@ -24,7 +24,7 @@ const History = () => {
         </div>
       ))}
 
-      <button className="submit-btn" onClick={() => navigate("/")}>
+      <button className="submit-btn" onClick={() => navigate("/exam")}>
         🔙 Back to Exam
       </button>
         </div>

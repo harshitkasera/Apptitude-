@@ -329,11 +329,11 @@ const Exam = () => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) setTheme(savedTheme);
   }, []);
-
+// ✅ Handle Option Select
   const handleOptionChange = (qIndex, optionIndex) => {
     setAnswers({ ...answers, [qIndex]: optionIndex });
   };
-
+ // ✅ Submit Exam
   const handleSubmit = () => {
     const total = questions.length;
     let correctCount = 0;
@@ -365,8 +365,7 @@ const Exam = () => {
     <div className={`exam-container ${theme}`}>
       <button className="theme-btn" onClick={toggleTheme}>
         {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
-      </button>
-
+      </button> 
       <h1>🧠 Aptitude Test</h1>
 
       {questions.map((q, qIndex) => (

@@ -13,7 +13,7 @@ import TestPage from "./Component/TestPage";
 import Exam from "./Component/Exam";
 import "./App.css"; // 👈 CSS file jisme dark-light mode ka style hoga
 import AddQues from "./Component/Admin/AddQues";
-import Category from "./Component/category";
+import Category from "./Component/Category";
 
 const App = () => {
   const { isloggedIn, loading } = useAuth();

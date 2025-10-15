@@ -13,6 +13,7 @@ import TestPage from "./Component/TestPage";
 import Exam from "./Component/Exam";
 import "./App.css"; // 👈 CSS file jisme dark-light mode ka style hoga
 import AddQues from "./Component/Admin/AddQues";
+import Category from "./Component/category";
 
 const App = () => {
   const { isloggedIn, loading } = useAuth();
@@ -63,6 +64,7 @@ const App = () => {
         <Route path="/exam" element={<Exam />} />
         <Route path="*" element={<Navigate to={isloggedIn ? "/profile" : "/home"} />} />
         <Route path="/addQues" element={<AddQues/>}/>
+        <Route path="/category" element={<Category/>}/>
       </Routes>
     </div>
   );

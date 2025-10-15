@@ -95,9 +95,7 @@ i{
   transition: all 0.3s ease;
 }
 
-.exam-container h1, .exam-container h2 {
-  text-align: center;
-}
+
 
 .question-card {
   margin-bottom: 20px;
@@ -109,7 +107,7 @@ i{
 
 .option-label {
   display: block;
-  margin-left: 250px ;
+  /* margin-left: 50px ; */
   padding: 5px;
 }
 @media(max-width: 768px) {

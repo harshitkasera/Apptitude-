@@ -13,12 +13,12 @@ const TestPage = () => {
       </div>
 <div className='list'>
   <a href='https://www.indiabix.com/computer-science/computer-fundamentals/'>
-    <p className='test-para'>Second Year</p>
+    <p className='test-para'>All Course</p>
   </a>
  <hr />
 
-  <Link to='/exam'>
-    <p className='test-para'>Third Year</p>
+  <Link to='/category'>
+    <p className='test-para'>JavaScript</p>
   </Link>
  <hr />
 

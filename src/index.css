@@ -35,10 +35,10 @@
 }
 
 .exam-container h2 {
-  text-align: center;
-  font-size: 26px;
+  text-align: left;
+  font-size: 20px;
   margin-bottom: 15px;
-  color: #2d2d2d;
+  color: #562525;
 }
 
 .exam-container h3 {
@@ -194,4 +194,73 @@ h1, h2 {
     }
   
    
+}
+.boxc{
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  justify-content: center;
+}
+ .boxc-l{
+  color: white;
+  margin: 35px;
+  font-size: 25px;
+
+  padding: 15px 44px;
+  background-color: #d5a402;
+  border-radius: 12px;
+}
+.boxc-l:hover{
+ background-color: rgba(220, 120, 12, 0.842);
+ color: rgb(55, 51, 51);
+ transition: 0.3s;
+
+}
+
+.boxc-l2{
+   color: white;
+  margin: 35px;
+  padding: 15px 30px;
+  font-size: 25px;
+  background-color: #00b306;
+  border-radius: 12px;
+}
+
+.boxc-l2:hover{
+ background-color: green;
+ transition: 0.3s;
+}
+
+.boxc-l3{
+   color: white;
+  margin: 35px;
+  font-size: 25px;
+  /* font-family: 'Ubuntu'; */
+  padding: 15px 43px;
+  background-color: #b34200;
+  border-radius: 12px;
+}
+
+.boxc-l3:hover{
+ background-color: rgb(137, 3, 3);
+ transition: 0.3s;
+}
+
+@media (max-width: 768px){
+  .medium{
+    margin-top: 30px;
+    text-align: left;
+  }
+  .hard{
+    margin-top: 30px;
+  }
+  .boxc-l{
+    font-size: 18px;
+  }
+  .boxc-l2{
+    font-size: 18px;
+  }
+  .boxc-l3{
+    font-size: 18px;
+  }
 }

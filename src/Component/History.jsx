@@ -15,7 +15,7 @@ const History = () => {
         <div className='hh'>
 <h1>📚 Exam History</h1>
       {history.map((exam, index) => (
-        <div key={index} className="question-card">
+        <div key={index} className="question">
           <p><strong>Date:</strong> {exam.date}</p>
           <p><strong>Score:</strong> {exam.score} / {exam.total} ({exam.percentage}%)</p>
           <p><strong>Result:</strong> <span style={{ color: exam.isPass ? "green" : "red" }}>

@@ -9,29 +9,42 @@ const Login = () => {
   const [password, setpassword] = useState('')
   const { login } = useAuth();
   const navigate = useNavigate()
+const loginuser = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await axios.post(
+      "https://apptitude-backend-a32l.onrender.com/api/user/loginuser",
+      { email, password }
+    );
 
-  const loginuser = async (e) => {
-    e.preventDefault();
-    const response = await axios.post('https://apptitude-backend-a32l.onrender.com/api/user/loginuser', {
-      email, password
-    })
-    console.log(response)
-    console.log(response.status)
-    console.log(email)
-    console.log(password)
+    console.log(response);
 
-    const token = response.data.token
-    // localStorage.setItem('token', token)
-    localStorage.setItem("userId", response.data.user._id);
+    const token = response.data.token;
+    const user = response.data.user; // ✅ user object from backend
 
+    // ✅ Save user details in localStorage
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("userId", user._id);
+    localStorage.setItem("userEmail", user.email);
+    localStorage.setItem("userName", user.name);
 
-    console.log(token)
-    login(response.data.token);
+    // ✅ Clear old test history for new login
+    localStorage.removeItem("examHistory");
 
-    if (response.status == 200) {
-      navigate('/profile')
+    // ✅ Save token (if needed for auth)
+    login(token);
+
+    alert("Login successful!");
+
+    if (response.status === 200) {
+      navigate("/profile");
     }
+  } catch (err) {
+    console.error(err);
+    alert("Login failed! Please check your credentials.");
   }
+};
+
   return (
     <div className='zen'>
 

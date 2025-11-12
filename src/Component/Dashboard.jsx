@@ -13,6 +13,8 @@ import {
   Legend,
 } from "recharts";
 
+
+
 const Dashboard = () => {
   const [examHistory, setExamHistory] = useState([]);
 
@@ -21,6 +23,11 @@ useEffect(() => {
   console.log("🔎 Exam History:", history);
   setExamHistory(history);
 }, []);
+////////////////////
+
+
+  
+
 
 
 

@@ -1,101 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import { useNavigate } from "react-router-dom";
-// import "./Style/Exam.css";
-
-// const Exam = () => {
-//   const [questions, setQuestions] = useState([]);
-//   const [answers, setAnswers] = useState({});
-//   const [theme, setTheme] = useState("light"); // ✅ light / dark
-//   const navigate = useNavigate();
-
-//   // Fetch questions
-//   useEffect(() => {
-//     const fetchQuestions = async () => {
-//       const res = await axios.get("https://apptitude-backend-a32l.onrender.com/api/question");
-//       setQuestions(res.data);
-//     };
-//     fetchQuestions();
-//   }, []);
-
-//   // Toggle theme
-//   const toggleTheme = () => {
-//     const newTheme = theme === "light" ? "dark" : "light";
-//     setTheme(newTheme);
-//     localStorage.setItem("theme", newTheme); // remember preference
-//   };
-
-//   // Load theme from localStorage
-//   useEffect(() => {
-//     const savedTheme = localStorage.getItem("theme");
-//     if (savedTheme) setTheme(savedTheme);
-//   }, []);
-// // ✅ Handle Option Select
-//   const handleOptionChange = (qIndex, optionIndex) => {
-//     setAnswers({ ...answers, [qIndex]: optionIndex });
-//   };
-//  // ✅ Submit Exam
-//   const handleSubmit = () => {
-//     const total = questions.length;
-//     let correctCount = 0;
-//     questions.forEach((q, i) => {
-//       if (q.correctAnswer === answers[i]) correctCount++;
-//     });
-//     const percentage = ((correctCount / total) * 100).toFixed(2);
-//     const isPass = percentage >= 60;
-
-//     const examHistory = JSON.parse(localStorage.getItem("examHistory")) || [];
-//     examHistory.push({
-//       date: new Date().toLocaleString(),
-//       score: correctCount,
-//       total,
-//       percentage,
-//       isPass,
-//     });
-//     localStorage.setItem("examHistory", JSON.stringify(examHistory));
-
-//     navigate("/result", {
-//       state: {
-//         questions,
-//         answers,
-//       },
-//     });
-//   };
-
-//   return (
-//     <div className={`exam-container ${theme}`}>
-//       <button className="theme-btn" onClick={toggleTheme}>
-//         {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
-//       </button> 
-//       <h1>🧠 Aptitude Test</h1>
-
-//       {questions.map((q, qIndex) => (
-//         <div className="question-card" key={qIndex}>
-//           <h2 className="ques">Q{qIndex + 1}. {q.question}</h2>
-//           {q.options.map((opt, optIndex) => (
-//             <label key={optIndex} className="option-label">
-//               <input
-//                 type="radio"
-//                 name={`question-${qIndex}`}
-//                 value={optIndex}
-//                 checked={answers[qIndex] === optIndex}
-//                 onChange={() => handleOptionChange(qIndex, optIndex)}
-//               />
-//               {opt}
-//             </label>
-//           ))}
-//         </div>
-//       ))}
-
-//       <button className="submit-btn" onClick={handleSubmit}>Submit Exam ✅</button>
-//     </div>
-//   );
-// };
-
-// export default Exam;
-
-
-
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -104,56 +6,61 @@ import "./Style/Exam.css";
 
 const Exam = () => {
   const [questions, setQuestions] = useState([]);
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState({});      // { 0: 2, 1: 0, ... } -> stores option index (Number)
   const [theme, setTheme] = useState("light");
-  const [timeLeft, setTimeLeft] = useState(600); // ✅ 10 minutes = 600 seconds
+  const [timeLeft, setTimeLeft] = useState(600);   // optional timer
   const navigate = useNavigate();
-
-  // ✅ Fetch Questions
+   
+  // Fetch questions on mount
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const res = await axios.get(
-          "https://apptitude-backend-a32l.onrender.com/api/question"
-        );
-        setQuestions(res.data);
+        const res = await axios.get("https://apptitude-backend-a32l.onrender.com/api/question");
+        setQuestions(res.data); // ensure each question has: _id, question, options[], correctAnswer (Number)
       } catch (err) {
         console.error("Error fetching questions:", err);
       }
     };
+     const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) setTheme(savedTheme);
     fetchQuestions();
   }, []);
 
-  // ✅ Load saved theme
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) setTheme(savedTheme);
-  }, []);
+  // theme load
+ 
 
-  // ✅ Theme toggle
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
   };
 
-  // ✅ Handle Option Select
+  // select option
   const handleOptionChange = (qIndex, optionIndex) => {
-    setAnswers({ ...answers, [qIndex]: optionIndex });
+    setAnswers(prev => ({ ...prev, [qIndex]: optionIndex }));
   };
 
-  // ✅ Submit Exam (manual + auto)
-  const handleSubmit = async() =>  {
+  // check whether all questions answered
+  const allAnswered = questions.length > 0 && Object.keys(answers).length === questions.length;
+
+  // Finish Exam -> compute score, save history, send summary mail, navigate
+  const handleFinishExam = async () => {
+    if (!allAnswered) {
+      return alert("Please answer all questions before submitting.");
+    }
+
     const total = questions.length;
     let correctCount = 0;
 
     questions.forEach((q, i) => {
-      if (q.correctAnswer === answers[i]) correctCount++;
+      // compare numeric indices; ensure types consistent
+      if (Number(q.correctAnswer) === Number(answers[i])) correctCount++;
     });
 
     const percentage = ((correctCount / total) * 100).toFixed(2);
-    const isPass = percentage >= 60;
+    const isPass = Number(percentage) >= 60;
 
+    // save local exam history
     const examHistory = JSON.parse(localStorage.getItem("examHistory")) || [];
     examHistory.push({
       date: new Date().toLocaleString(),
@@ -164,54 +71,48 @@ const Exam = () => {
     });
     localStorage.setItem("examHistory", JSON.stringify(examHistory));
 
-    navigate("/result", {
-      state: {
-        questions,
-        answers,
-      },
-    });
+    // prepare payload for backend
+    const user = JSON.parse(localStorage.getItem("user")) || {};
+    const payload = {
+      email: localStorage.getItem("userEmail"),
+      name: user.name || "",
+      score: correctCount,
+      total,
+      percentage,
+      isPass,
+    };
 
-    //==================Mail
-
-    // ✅ After calculating result (inside handleSubmit)
-const resultData = {
-  email: localStorage.getItem("userEmail"), // store earlier when user logs in / registers
-  score: correctCount,
-  total,
-  percentage,
-  isPass,
-};
-
-try {
-  await axios.post("https://apptitude-backend-a32l.onrender.com/api/submit/:id", resultData);
-  console.log("Result email sent successfully!");
-} catch (err) {
-  console.error("Error sending result email:", err);
-}
-
-  };
-
-  // ✅ Timer logic (auto-submit when time ends)
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      handleSubmit(); // Auto-submit when time runs out
-      return;
+    try {
+      // send final summary email
+      const res = await axios.post("https://apptitude-backend-a32l.onrender.com/api/user/send-result", payload)
+      console.log("Summary mail response:", res.data);
+      alert("Exam submitted. Result email sent!");
+    } catch (err) { 
+      console.error("Error sending summary email:", err);
+      alert("Exam submitted, but error sending email. Check console.");
     }
 
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
+    // navigate to result screen and pass data
+    navigate("/result", { state: { questions, answers } });
+  };
 
-    return () => clearInterval(timer);
-  }, [timeLeft]);
 
-  // ✅ Format time (mm:ss)
-  const formatTime = (seconds) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins.toString().padStart(2, "0")}:${secs
-      .toString()
-      .padStart(2, "0")}`;
+
+
+  // optional timer auto-submit 
+  useEffect(() => {
+    if (timeLeft <= 0) {
+      if (allAnswered) handleFinishExam();
+      return;
+    }
+    const t = setInterval(() => setTimeLeft(prev => prev - 1), 1000);
+    return () => clearInterval(t);
+  }, [timeLeft, allAnswered]); // eslint-disable-line
+
+  const formatTime = (s) => {
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return `${String(m).padStart(2,"0")}:${String(sec).padStart(2,"0")}`;
   };
 
   return (
@@ -228,17 +129,15 @@ try {
       <h1>🧠 Aptitude Test</h1>
 
       {questions.map((q, qIndex) => (
-        <div className="question-card" key={qIndex}>
-          <h2 className="ques">
-            Q{qIndex + 1}. {q.question}
-          </h2>
+        <div className="question-card" key={q._id || qIndex}>
+          <h2>Q{qIndex + 1}. {q.question}</h2>
           {q.options.map((opt, optIndex) => (
             <label key={optIndex} className="option-label">
               <input
                 type="radio"
                 name={`question-${qIndex}`}
                 value={optIndex}
-                checked={answers[qIndex] === optIndex}
+                checked={Number(answers[qIndex]) === optIndex}
                 onChange={() => handleOptionChange(qIndex, optIndex)}
               />
               {opt}
@@ -247,8 +146,12 @@ try {
         </div>
       ))}
 
-      <button className="submit-btn" onClick={handleSubmit}>
-        Submit Exam ✅
+      <button
+        className="submit-btn final"
+        onClick={handleFinishExam}
+        disabled={!allAnswered}
+      >
+        Finish Exam & Send Result
       </button>
     </div>
   );

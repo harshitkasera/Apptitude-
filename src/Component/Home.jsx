@@ -2,8 +2,10 @@ import React from 'react'
 import "./Style/Home.css"
 import axios from 'axios'
 import { useState } from 'react'
-
+import { useNavigate } from 'react-router-dom'
 const Home = () => {
+  const navigate = useNavigate()
+
   //signup
   const[form, setform]=useState({
     name: '',
@@ -19,6 +21,10 @@ const Home = () => {
       const res = await axios.post('https://apptitude-backend-a32l.onrender.com/api/user/saveUser',form)
       console.log(res);
       alert('user Created successfuly ')
+      
+        if (response.status === 200) {
+      navigate("/login ");
+    }
     }
     catch(error){
       console.log(error);
@@ -28,6 +34,7 @@ const Home = () => {
 
   //login
    
+  
 
   return (
     <div>
@@ -76,17 +83,13 @@ const Home = () => {
                 <br />
                
                 Full name:  <input className='inp' type="text" name='name' placeholder="enter the name"  onChange={handlechange} /><br /><br />
-                <br />
+             
                 Email:  <input className='inp' type="email" name='email' placeholder="enter the email"  onChange={handlechange}/><br /><br />
-                <br />
-                {/* Username: <input className='inp' type="text" placeholder="enter the username" onChange={handlechange} /><br /><br />
-                <br /> */}
+             
+            
                 Password: <input className='inp' name='password' type="password" placeholder="enter the password" onChange={handlechange} /><br /><br />
-                <br />
-                {/* Repeat Password <input className='inp' type="password" placeholder="repeat password"  onChange={handlechange} /><br /><br />
-                <div className="checkbox">
-                  <input type="checkbox" /> I agree to the Terms & Privacy
-                </div> */}
+              
+               
               </div>
               <div className="modal-footer">
                 <button type='submit' className="btn btn-primary">Sign Up</button>

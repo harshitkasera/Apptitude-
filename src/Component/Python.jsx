@@ -5,7 +5,7 @@ import React from 'react'
 import './Style/Test.css'
 import { Link } from 'react-router-dom'
 
-const TestPage = () => {
+const Python = () => {
   return (
     <div className='test-box'>
       <div className='t'>
@@ -23,17 +23,17 @@ const TestPage = () => {
  <hr />
 
   <a href='/category'>
-    <p className='test-para'>JavaScript</p>
+    <p className='test-para'>Python</p>
   </a>
  <hr />
 
   <a href='/category'>
-    <p className='test-para'>React.JS</p>
+    <p className='test-para'>Django</p>
   </a>
  <hr />
 
   <a href='/category'>
-    <p className='test-para'>MongoDB / Node</p>
+    <p className='test-para'>Numpy</p>
   </a>
   <br />
 </div>
@@ -42,4 +42,4 @@ const TestPage = () => {
   )
 }
 
-export default TestPage
+export default Python

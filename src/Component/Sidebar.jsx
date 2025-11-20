@@ -14,6 +14,7 @@ const Sidebar = () => {
   return (
     <div className='sidebar'>
       <h1>Aptitude Test</h1>
+      <Link className='side-link' to="/streem"><i class="fa fa-home" aria-hidden="true"></i>Home</Link>
       <div className='st'>
       <Link className='side-link' to="/profile">  <i className="fa fa-user" aria-hidden="true"></i>Profile</Link></div>
       <Link className='side-link' to="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</Link>

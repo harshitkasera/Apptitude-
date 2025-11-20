@@ -18,22 +18,22 @@ const TestPage = () => {
  <hr />
 
   <Link to='/category'>
-    <p className='test-para'>HTML/CSS</p>
+    <p className='test-para'>Machine Learning</p>
   </Link>
  <hr />
 
   <a href='/category'>
-    <p className='test-para'>JavaScript</p>
+    <p className='test-para'>PowerBI</p>
   </a>
  <hr />
 
   <a href='/category'>
-    <p className='test-para'>React.JS</p>
+    <p className='test-para'>Database Management</p>
   </a>
  <hr />
 
   <a href='/category'>
-    <p className='test-para'>MongoDB / Node</p>
+    <p className='test-para'>Data Visualization</p>
   </a>
   <br />
 </div>

@@ -37,7 +37,7 @@ const loginuser = async (e) => {
     alert("Login successful!");
 
     if (response.status === 200) {
-      navigate("/profile");
+      navigate("/streem ");
     }
   } catch (err) {
     console.error(err);

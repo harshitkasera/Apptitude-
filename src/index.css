@@ -210,7 +210,7 @@ h1, h2 {
   margin: 35px;
   font-size: 25px;
 
-  padding: 15px 44px;
+     padding: 15px 9px;
   background-color: #d5a402;
   border-radius: 12px;
 }
@@ -240,7 +240,7 @@ h1, h2 {
   margin: 35px;
   font-size: 25px;
   /* font-family: 'Ubuntu'; */
-  padding: 15px 43px;
+  padding: 15px 9px;
   background-color: #b34200;
   border-radius: 12px;
 }

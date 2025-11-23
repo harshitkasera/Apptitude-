@@ -1,96 +1,3 @@
-// import axios from 'axios';
-// import React, { useState } from 'react'
-
-// const AddQues = () => {
-//   const [questions, setQuestions]=useState([])
-//   const [currentIndex, setCurrentIndex]=useState({})
-//   const [newQuestion, setNewQuestion]=useState({
-//     text: "",
-//     options: ["","","",""],
-//     correctAnswer: 0,
-//   })
-
-//   const handleAddQuestion = async(e)=>{
-// e.preventDefault();
-// try{
-//   await axios.post("http://localhost:1100/api/question", newQuestion);
-//   alert("Question added ")
-//   setNewQuestion({text: "", options: ["","","",""], correctAnswer: 0})
-//   // fetchQuestions(); //refresh questions
-// }catch(err){
-//   console.log("Error adding question", err)
-// }
-//   }
-//   if(questions.length ===0){
-//     return <h2 style={{ textAlign: "center" }}>📭 No Questions Found!</h2>;
-//   }
-//   const currentQ = questions[currentIndex]
-//   return (
-//     <div>
-//        <h2>Add New Question</h2>
-//       <form onSubmit={handleAddQuestion}>
-//         <input
-//           type="text"
-//           placeholder="Question text"
-//           value={newQuestion.text}
-//           onChange={(e) =>
-//             setNewQuestion({ ...newQuestion, text: e.target.value })
-//           }
-//           required
-//           style={{ width: "100%", marginBottom: "10px", padding: "5px" }}
-//         />
-
-//         {newQuestion.options.map((opt, idx) => (
-//           <input
-//             key={idx}
-//             type="text"
-//             placeholder={`Option ${idx + 1}`}
-//             value={opt}
-//             onChange={(e) => {
-//               const updated = [...newQuestion.options];
-//               updated[idx] = e.target.value;
-//               setNewQuestion({ ...newQuestion, options: updated });
-//             }}
-//             required
-//             style={{ width: "100%", marginBottom: "10px", padding: "5px" }}
-//           />
-//         ))}
-
-//         <input
-//           type="number"
-//           placeholder="Correct Answer Index (0-3)"
-//           value={newQuestion.correctAnswer}
-//           onChange={(e) =>
-//             setNewQuestion({
-//               ...newQuestion,
-//               correctAnswer: parseInt(e.target.value),
-//             })
-//           }
-//           min="0"
-//           max="3"
-//           required
-//           style={{ width: "100%", marginBottom: "10px", padding: "5px" }}
-//         />
-
-//         <button type="submit">Add Question</button>
-    
-//       </form>
-//     </div>
-//   )
-// }
-
-// export default AddQues
-
-
-
-
-
-
-
-
-
-
-
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import "../Style/Addq.css";
@@ -106,7 +13,7 @@ const AddQues = () => {
   // 🔹 Questions fetch karne ka function
   const fetchQuestions = async () => {
     try {
-      const res = await axios.get("http://localhost:1100/api/question");
+      const res = await axios.get("https://apptitude-backend-a32l.onrender.com/api/question");
       setQuestions(res.data);
     } catch (err) {
       console.log("Error fetching questions", err);

@@ -19,26 +19,27 @@ const loginuser = async (e) => {
 
     console.log(response);
 
-    const token = response.data.token;
-    const user = response.data.user; // ✅ user object from backend
+ const token = response.data.token;
+const user = response.data.user;
 
-    // ✅ Save user details in localStorage
-    localStorage.setItem("user", JSON.stringify(user));
-    localStorage.setItem("userId", user._id);
-    localStorage.setItem("userEmail", user.email);
-    localStorage.setItem("userName", user.name);
+// Check previous user
+const previousUserId = localStorage.getItem("userId");
 
-    // ✅ Clear old test history for new login
-    localStorage.removeItem("examHistory");
+// Store new user
+localStorage.setItem("user", JSON.stringify(user));
+localStorage.setItem("userId", user._id);
+localStorage.setItem("userEmail", user.email);
+localStorage.setItem("userName", user.name);
 
-    // ✅ Save token (if needed for auth)
-    login(token);
+// Delete examHistory ONLY if new user is different
+if (previousUserId && previousUserId !== user._id) {
+  localStorage.removeItem("examHistory");
+}
 
-    alert("Login successful!");
+login(token);
+alert("Login successful!");
+navigate("/streem");
 
-    if (response.status === 200) {
-      navigate("/streem ");
-    }
   } catch (err) {
     console.error(err);
     alert("Login failed! Please check your credentials.");
